@@ -9,6 +9,7 @@ const app = express();
 // Acquire Data
 const courses = require("./data/courses.json");
 const courses_material = require("./data/course_materials.json");
+const faq = require("./data/faq.json");
 
 // Disable cors
 app.use(cors());
@@ -28,6 +29,11 @@ app.get("/courses/:courseID", (req, res) => {
   const id = req.params.courseID;
   const selectedCourse = courses_material.filter((course) => course._id === id);
   res.send(selectedCourse);
+});
+
+// FAQ
+app.get("/faq", (req, res) => {
+  res.send(faq);
 });
 
 // app is listening on port
