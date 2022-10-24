@@ -9,5 +9,11 @@ const app = express();
 // Disable cors
 app.use(cors());
 
+// Root directory
+app.get("/", (req, res) => {});
+
 // app is listening on port
-app.listen();
+
+app.listen(port, () => {
+  console.log("Dev Sparkle Server running on port", port);
+});
