@@ -6,11 +6,17 @@ const port = process.env.PORT || 5000;
 
 const app = express();
 
+// Acquire Data
+const courses = require("./data/courses.json");
+const courses_material = require("./data/course_materials.json");
+
 // Disable cors
 app.use(cors());
 
 // Root directory
-app.get("/", (req, res) => {});
+app.get("/", (req, res) => {
+  res.send("Dev Sparkle Server is running");
+});
 
 // app is listening on port
 
