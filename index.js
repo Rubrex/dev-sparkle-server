@@ -23,6 +23,13 @@ app.get("/courses", (req, res) => {
   res.send(courses);
 });
 
+// Courses_Material
+app.get("/courses/:courseID", (req, res) => {
+  const id = req.params.courseID;
+  const selectedCourse = courses_material.filter((course) => course._id === id);
+  res.send(selectedCourse);
+});
+
 // app is listening on port
 
 app.listen(port, () => {
