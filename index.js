@@ -18,6 +18,11 @@ app.get("/", (req, res) => {
   res.send("Dev Sparkle Server is running");
 });
 
+// Courses
+app.get("/courses", (req, res) => {
+  res.send(courses);
+});
+
 // app is listening on port
 
 app.listen(port, () => {
